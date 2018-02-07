@@ -69,7 +69,7 @@ class Operators {
         // Boolean canProgram = false;
         // int currentSavings = 500;
 
-        //There are some print statements below. Can you guess which ones will print?
+     //There are some print statements below. Can you guess which ones will print?
         // if(!haveJob) {
         //     if(lookingForWork && canProgram) {
         //         System.out.println("Your chances as getting a job go up!");
@@ -86,16 +86,16 @@ class Operators {
         // }  
 
     //Target Saving code
-        int targetSavingsGoal = 50000;
-        int savingsPerMonth = 1200;
-        int month = targetSavingsGoal/savingsPerMonth;
+        // int targetSavingsGoal = 50000;
+        // int savingsPerMonth = 1200;
+        // int month = targetSavingsGoal/savingsPerMonth;
 
-        System.out.println("Goal" + " " + targetSavingsGoal);
-        System.out.println("SavingsPerMonth" + " " + savingsPerMonth);
-        System.out.println("MonthsTillGoal" + " " + month);
+        // System.out.println("Goal" + " " + targetSavingsGoal);
+        // System.out.println("SavingsPerMonth" + " " + savingsPerMonth);
+        // System.out.println("MonthsTillGoal" + " " + month);
 
     //Random Sentence code
-        // String[] Nouns = {"dog","cat","fish","tree","book","bug"};
+        // String[] Nouns = {"dog" , "cat" , "fish" , "tree" , "book" , "bug"};
         // String Verbs = "ran ate jumped slept hit";
         // String Articles = "the a";
         // String Prepositions = "on trough over under in with ";
@@ -105,6 +105,34 @@ class Operators {
         // String Nouns_sen = Nouns[sen.nextInt(Nouns.length)];
 
         // System.out.println(Nouns_sen);
+
+    //interest
+        // double loanAmount = 225.50;
+        // double intersRate = .02;
+        // int loanPayBackPeriod = 12;
+        // double interest = loanPayBackPeriod*intersRate*loanPayBackPeriod;
+        // double loanCost = loanAmount+interest;
+
+        // System.out.println("Loan Amount" + " " + loanAmount);
+        // System.out.println("Rate of Interest" + " " + intersRate);
+        // System.out.println("Months" + " " + loanPayBackPeriod);
+        // System.out.println("Interest" + " " + interest);
+        // System.out.println("Total Cost of Loan" + " " + loanCost);
+
+    //Job Money Single Code
+        boolean hasGirlfriend = false;
+        boolean hasMoney = false;
+        boolean hasJob = false;
+
+        if (hasGirlfriend == true){
+            System.out.println("Sucess!");
+        }
+    else if(hasMoney||hasJob ==true){
+            System.out.println("You can do it!");
+    }
+    else{
+        System.out.println("Single as a Pringle");
+}
 
     } 
 }
