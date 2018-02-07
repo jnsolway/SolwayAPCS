@@ -95,16 +95,16 @@ class Operators {
         // System.out.println("MonthsTillGoal" + " " + month);
 
     //Random Sentence code
-        // String[] Nouns = {"dog" , "cat" , "fish" , "tree" , "book" , "bug"};
-        // String Verbs = "ran ate jumped slept hit";
-        // String Articles = "the a";
-        // String Prepositions = "on trough over under in with ";
+        String[] Nouns = {"dog" , "cat" , "fish" , "tree" , "book" , "bug"};
+        String Verbs = "ran ate jumped slept hit";
+        String Articles = "the a";
+        String Prepositions = "on trough over under in with ";
         
-        // Random sen = new Random();
+        Random sen = new Random();
 
-        // String Nouns_sen = Nouns[sen.nextInt(Nouns.length)];
+        String Nouns_sen = Nouns[sen.nextInt(Nouns.length)];
 
-        // System.out.println(Nouns_sen);
+        System.out.println(Nouns_sen);
 
     //interest
         // double loanAmount = 225.50;
@@ -120,19 +120,19 @@ class Operators {
         // System.out.println("Total Cost of Loan" + " " + loanCost);
 
     //Job Money Single Code
-        boolean hasGirlfriend = false;
-        boolean hasMoney = false;
-        boolean hasJob = false;
+//         boolean hasGirlfriend = false;
+//         boolean hasMoney = false;
+//         boolean hasJob = false;
 
-        if (hasGirlfriend == true){
-            System.out.println("Sucess!");
-        }
-    else if(hasMoney||hasJob ==true){
-            System.out.println("You can do it!");
-    }
-    else{
-        System.out.println("Single as a Pringle");
-}
+//         if (hasGirlfriend == true){
+//             System.out.println("Sucess!");
+//         }
+//     else if(hasMoney||hasJob ==true){
+//             System.out.println("You can do it!");
+//     }
+//     else{
+//         System.out.println("Single as a Pringle");
+// }
 
     } 
 }
