@@ -1,5 +1,6 @@
 class Operators {
     public static void main(String args[]) {
+    //Name Code
         // String name = "Merrell";
         // System.out.println(name);
 
@@ -17,6 +18,7 @@ class Operators {
         // System.out.println(fullName);
         // System.out.println("fullName");
 
+    //GradYear and Modulo Age
         // int currentYear = 2018;
         // int yearsUntilGraduation = 0;
         // int myGradYear = currentYear + yearsUntilGraduation;
@@ -40,6 +42,8 @@ class Operators {
         // System.out.println(moduloCurrentAge);
         // System.out.println(moduloNextAge);
 
+       
+    //Bitcoin Code
         //  double bitcoinsOwned = .000001;
         // double bcsCoinsOwned = 2;
 
@@ -60,25 +64,47 @@ class Operators {
         // bcsCoinsWorth = bcsCoinsOwned * bcsCoinValue; //This is the exact same calculation we used earlier, but we updated bcsCoinValue, so let's calculate it again.
         // System.out.println("My current BCSCoins could eventually be worth $" + bcsCoinsWorth);  
         
-        Boolean haveJob = false;
-        Boolean lookingForWork = true;
-        Boolean canProgram = false;
-        int currentSavings = 500;
+        // Boolean haveJob = false;
+        // Boolean lookingForWork = true;
+        // Boolean canProgram = false;
+        // int currentSavings = 500;
 
         //There are some print statements below. Can you guess which ones will print?
-        if(!haveJob) {
-            if(lookingForWork && canProgram) {
-                System.out.println("Your chances as getting a job go up!");
-            }
-            else {
-                System.out.println("You might need to gain more skills before you can get a job.");
-            }
-        }
-        if(currentSavings < 500) {
-            System.out.println("You should be saving more money.");
-        }
-        else {
-            System.out.println("Do you need to save more money, still?");
-        }  
+        // if(!haveJob) {
+        //     if(lookingForWork && canProgram) {
+        //         System.out.println("Your chances as getting a job go up!");
+        //     }
+        //     else {
+        //         System.out.println("You might need to gain more skills before you can get a job.");
+        //     }
+        // }
+        // if(currentSavings < 500) {
+        //     System.out.println("You should be saving more money.");
+        // }
+        // else {
+        //     System.out.println("Do you need to save more money, still?");
+        // }  
+
+    //Target Saving code
+        int targetSavingsGoal = 50000;
+        int savingsPerMonth = 1200;
+        int month = targetSavingsGoal/savingsPerMonth;
+
+        System.out.println("Goal" + " " + targetSavingsGoal);
+        System.out.println("SavingsPerMonth" + " " + savingsPerMonth);
+        System.out.println("MonthsTillGoal" + " " + month);
+
+    //Random Sentence code
+        // String[] Nouns = {"dog","cat","fish","tree","book","bug"};
+        // String Verbs = "ran ate jumped slept hit";
+        // String Articles = "the a";
+        // String Prepositions = "on trough over under in with ";
+        
+        // Random sen = new Random();
+
+        // String Nouns_sen = Nouns[sen.nextInt(Nouns.length)];
+
+        // System.out.println(Nouns_sen);
+
     } 
 }
