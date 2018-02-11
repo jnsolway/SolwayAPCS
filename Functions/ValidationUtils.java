@@ -2,20 +2,20 @@ import java.util.Scanner;
 
 class ValidationUtils {
     public static void main(String args[]) {
-        System.out.print("Enter a Int: ");
+        System.out.print("Enter a double: ");
         Scanner scan = new Scanner(System.in);
-        if(isValidInt(scan)) {
-            System.out.println("Int Success!");
+        if(isValidDouble(scan)) {
+            System.out.println("Double Success!");
         }
         else {
-            System.out.println("Int Failure!");
+            System.out.println("Double Failure!");
         }
     }
 
     
-    public static Boolean isValidInt(Scanner scan) {
+    public static Boolean isValidDouble(Scanner scan) {
         try {
-            int i = scan.nextInt();
+            double i = scan.nextDouble();
         }
         catch(Exception e) {
             return false; //An error was raised. The user input could not be read as a String.
