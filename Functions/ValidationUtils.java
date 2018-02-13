@@ -18,14 +18,17 @@ class ValidationUtils {
         return s.equals("t")||
             s.equals("f")||
             s.equals("true")||
-            s.equals("false");
-
-    public static Boolean parseBoolean(Scanner scan) {
-         String s = scan.nextLine().toLowerCase();
-        if(s.equals("t")||s.equals("true")||s.equals(1)){
+            s.equals("false")||
+            s.equals("0")||
+            s.equals("1");
+    }
+    public static Boolean parseBoolean(scan) {
+        if(s.equals("t")||s.equals("true")||s.equals(1))
+        {
             return true;
         }
-        else{
+        else
+        {
             return false;
         }
     // public static Boolean isValidDouble(Scanner scan) {
