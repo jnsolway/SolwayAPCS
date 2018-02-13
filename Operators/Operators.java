@@ -107,17 +107,7 @@ class Operators {
         // System.out.println(Nouns_sen);
 
     //interest
-        // double loanAmount = 225.50;
-        // double intersRate = .02;
-        // int loanPayBackPeriod = 12;
-        // double interest = loanPayBackPeriod*intersRate*loanPayBackPeriod;
-        // double loanCost = loanAmount+interest;
-
-        // System.out.println("Loan Amount" + " " + loanAmount);
-        // System.out.println("Rate of Interest" + " " + intersRate);
-        // System.out.println("Months" + " " + loanPayBackPeriod);
-        // System.out.println("Interest" + " " + interest);
-        // System.out.println("Total Cost of Loan" + " " + loanCost);
+    `1  
 
     //Job Money Single Code
         // boolean hasGirlfriend = false;

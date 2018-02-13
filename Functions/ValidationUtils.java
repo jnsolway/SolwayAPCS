@@ -13,17 +13,21 @@ class ValidationUtils {
     }
 
     
-     public static Boolean isValidBoolean(Scanner scan) {
-         String s = scan.nextLine();
+    public static Boolean isValidBoolean(Scanner scan) {
+         String s = scan.nextLine().toLowerCase();
         return s.equals("t")||
             s.equals("f")||
             s.equals("true")||
-            s.equals("false")||
-            s.equals("T")||
-            s.equals("F")||
-            s.equals("True")||
-            s.equals("False");
+            s.equals("false");
 
+    public static Boolean parseBoolean(Scanner scan) {
+         String s = scan.nextLine().toLowerCase();
+        if(s.equals("t")||s.equals("true")||s.equals(1)){
+            return true;
+        }
+        else{
+            return false;
+        }
     // public static Boolean isValidDouble(Scanner scan) {
         // try {
         //     double i = scan.nextDouble();
