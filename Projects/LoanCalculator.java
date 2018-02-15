@@ -31,9 +31,39 @@ public class LoanCalculator{
     }
 
     public static void flatInterest() {
-        System.out.println("Still a stub function. Not yet implemented"); //Delete this once you implement the function
-        //Calculate flat interest and print it out here
+        System.out.println("Still a stub function. Not yet implemented");
+        loanAmt = scan.nextDouble();
+        interestRate = .02;
+        loanTerm = 12;
+        double interest = loanAmt*interestRate*loanTerm;
+        double loanCost = loanAmt+interest;
+
+        System.out.println("Loan Amount" + " " + loanAmt);
+        System.out.println("Rate of Interest" + " " + interestRate);
+        System.out.println("Months" + " " + loanTerm);
+        System.out.println("Interest" + " " + interest);
+        System.out.println("Total Cost of Loan" + " " + loanCost);
     }
+    public static Boolean isValidDouble(Scanner scan) {
+        try {
+            double d = scan.hasNextDouble();
+        }
+        catch(Exception e) {
+            return false; //An error was raised. The user input could not be read as a String.
+        }
+        return true; //No error was raised. The scanner read it successfully as a String.
+    }
+
+ public static Boolean isValidInt(Scanner scan) {
+        try {
+            int i = scan.hasNextInt();
+        }
+        catch(Exception e) {
+            return false; //An error was raised. The user input could not be read as a String.
+        }
+        return true; //No error was raised. The scanner read it successfully as a String.
+    }
+
 
     public static void printModeStatement() {
         System.out.print(
