@@ -1,5 +1,7 @@
 class Operators {
     public static void main(String args[]) {
+
+        System.out.println((char)27 + "[31m" + "Wow");
     //Name Code
         // String name = "Merrell";
         // System.out.println(name);
@@ -108,16 +110,16 @@ class Operators {
 
     //interest
         // double loanAmount = 225.50;
-+       // double intersRate = .02;
-+       // int loanPayBackPeriod = 12;
-+       // double interest = loanPayBackPeriod*intersRate*loanPayBackPeriod;
-+       // double loanCost = loanAmount+interest;
+       // double intersRate = .02;
+       // int loanPayBackPeriod = 12;
+       // double interest = loanPayBackPeriod*intersRate*loanPayBackPeriod;
+       // double loanCost = loanAmount+interest;
 
-+       // System.out.println("Loan Amount" + " " + loanAmount);
-+       // System.out.println("Rate of Interest" + " " + intersRate);
-+       // System.out.println("Months" + " " + loanPayBackPeriod);
-+       // System.out.println("Interest" + " " + interest);
-+       // System.out.println("Total Cost of Loan" + " " + loanCost);
+       // System.out.println("Loan Amount" + " " + loanAmount);
+       // System.out.println("Rate of Interest" + " " + intersRate);
+      // System.out.println("Months" + " " + loanPayBackPeriod);
+       // System.out.println("Interest" + " " + interest);
+       // System.out.println("Total Cost of Loan" + " " + loanCost);
 
     //Job Money Single Code
         // boolean hasGirlfriend = false;
