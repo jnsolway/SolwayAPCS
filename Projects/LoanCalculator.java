@@ -36,33 +36,33 @@ public class LoanCalculator{
         Scanner scan3;
         System.out.println("Still a stub function. Not yet implemented");
         // loanAmt = scan.hasNextDouble();
-            while(true) {
-                System.out.print("Enter a Loan Amount: ");
-                scan1 = new Scanner(System.in);
-                    if(scan1.hasNextDouble()) { //Check if input provided is a valid integer
-                        loanAmt = scan1.nextDouble();
-                        break;
-                    }
-            }
+        while(true) {
+            System.out.print("Enter a Loan Amount: ");
+            scan1 = new Scanner(System.in);
+                if(scan1.hasNextDouble()) { //Check if input provided is a valid integer
+                    loanAmt = scan1.nextDouble();
+                    break;
+                }
+        }
         // interestRate = scan.hasNextDouble();
-            while(true) {
-                System.out.print("Interest Rate: ");
-                scan2 = new Scanner(System.in);
-                    if(scan2.hasNextDouble()) { //Check if input provided is a valid integer
-                        interestRate = scan2.nextDouble();
-                        break;
-                    }
-            }
+        while(true) {
+            System.out.print("Interest Rate: ");
+            scan2 = new Scanner(System.in);
+                if(scan2.hasNextDouble()) { //Check if input provided is a valid integer
+                    interestRate = scan2.nextDouble();
+                    break;
+                }
+        }
         
         // loanTerm = scan.hasNextInt();
-            while(true) {
-                System.out.print("Loan Term: ");
-                scan3 = new Scanner(System.in);
-                    if(scan3.hasNextInt()) { //Check if input provided is a valid integer
-                        loanTerm = scan3.nextInt();
-                        break;
-                    }
-            }
+        while(true) {
+            System.out.print("Loan Term: ");
+            scan3 = new Scanner(System.in);
+                if(scan3.hasNextInt()) { //Check if input provided is a valid integer
+                    loanTerm = scan3.nextInt();
+                    break;
+                }
+        }
         double interest = loanAmt*interestRate/100*loanTerm;
         double loanCost = loanAmt+interest;
 
@@ -79,40 +79,37 @@ public class LoanCalculator{
         Scanner scan1;
         Scanner scan2;
         Scanner scan3;
-        System.out.println("Still a stub function. Not yet implemented");
         // loanAmt = scan.hasNextDouble();
-            while(true) {
-                System.out.print("Enter a Loan Amount: ");
-                scan1 = new Scanner(System.in);
-                    if(scan1.hasNextDouble()) { //Check if input provided is a valid integer
-                        loanAmt = scan1.nextDouble();
-                        break;
-                    }
-            }
+        while(true) {
+            System.out.print("Enter a Loan Amount: ");
+            scan1 = new Scanner(System.in);
+                if(scan1.hasNextDouble()) { //Check if input provided is a valid integer
+                    loanAmt = scan1.nextDouble();
+                    break;
+                }
+        }
         // interestRate = scan.hasNextDouble();
-            while(true) {
-                System.out.print("Interest Rate: ");
-                scan2 = new Scanner(System.in);
-                    if(scan2.hasNextDouble()) { //Check if input provided is a valid integer
-                        interestRate = scan2.nextDouble();
-                        break;
-                    }
-            }
+        while(true) {
+            System.out.print("Interest Rate: ");
+            scan2 = new Scanner(System.in);
+                if(scan2.hasNextDouble()) { //Check if input provided is a valid integer
+                    interestRate = scan2.nextDouble();
+                    break;
+                }
+        }
         
         // loanTerm = scan.hasNextInt();
-            while(true) {
-                System.out.print("Loan Term: ");
-                scan3 = new Scanner(System.in);
-                    if(scan3.hasNextInt()) { //Check if input provided is a valid integer
-                        loanTerm = scan3.nextInt();
-                        break;
-                    }
-            }
-        double ratePerMonth = interestRate /12;
-        double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12))));
+        while(true) {
+            System.out.print("Loan Term: ");
+            scan3 = new Scanner(System.in);
+                if(scan3.hasNextInt()) { //Check if input provided is a valid integer
+                    loanTerm = scan3.nextInt();
+                    break;
+                }
+        }
         
-        // double interest = loanAmt*interestRate/100*loanTerm;
-        // double loanCost = loanAmt+interest;
+        double loanCost = loanAmt*Math.pow(1+(interestRate/12),12*loanTerm);
+        double interest = loanCost-loanAmt;
 
         System.out.println(" ");
         System.out.println("Loan Amount" + " " + loanAmt);
