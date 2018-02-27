@@ -5,6 +5,15 @@ public class LoanCalculator{
     public static double loanAmt = -1;
     public static int loanTerm = -1;
     public static double interestRate = -1;
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
 
     public static void main(String[] args) {
         //Read in the loan calculation mode
@@ -69,11 +78,11 @@ public class LoanCalculator{
         double loanCost = loanAmt+interest;
 
         System.out.println(" ");
-        System.out.println("Original Loan Amount:" + " $" + loanAmt);
-        System.out.println("Rate of Interest:" + " " + interestRate + "%");
+        System.out.println("Original Loan Amount:" + ANSI_GREEN + " $" + ANSI_RESET + loanAmt);
+        System.out.println("Rate of Interest:" + " " + interestRate + ANSI_RED + "%" + ANSI_RESET);
         System.out.println("Loan Terms in Years:" + " " + loanTerm);
-        System.out.println("Interest to be Paid:" + " $" + interest);
-        System.out.println("Total Cost of Loan:" + " $" + loanCost);
+        System.out.println("Interest to be Paid:" + ANSI_GREEN + " $" + ANSI_RESET + interest);
+        System.out.println("Total Cost of Loan:" + ANSI_GREEN + " $" + ANSI_RESET + loanCost);
             
     }
     
@@ -114,11 +123,11 @@ public class LoanCalculator{
     double interest = loanCost-loanAmt;
 
     System.out.println(" ");
-    System.out.println("Original Loan Amount:" + " $" + loanAmt);
-    System.out.println("Rate of Interest:" + " $" + interestRate + "%");
-    System.out.println("Loan Term in Years:" + " $" + loanTerm);
-    System.out.println("Interest to be Paid:" + " $" + interest);
-    System.out.println("Total Cost of Loan:" + " $" + loanCost);
+    System.out.println("Original Loan Amount:" + ANSI_GREEN + " $" + ANSI_RESET + loanAmt);
+    System.out.println("Rate of Interest:" + interestRate + ANSI_RED + "%" + ANSI_RESET);
+    System.out.println("Loan Term in Years:" + ANSI_GREEN + " $" + ANSI_RESET + loanTerm);
+    System.out.println("Interest to be Paid:" + ANSI_GREEN + " $" + ANSI_RESET + interest);
+    System.out.println("Total Cost of Loan:" + ANSI_GREEN + " $" + ANSI_RESET + loanCost);
         
     }
         
@@ -176,13 +185,13 @@ public class LoanCalculator{
         double loanCost = loanAmt + interestPaid;
     
     System.out.println(" ");
-    System.out.println("Original Loan Amount:" + " $" + loanAmt);
-    System.out.println("Rate of Interest:" + " " + interestRate*100 + "%");
+    System.out.println("Original Loan Amount:" + ANSI_GREEN + " $" + ANSI_RESET + loanAmt);
+    System.out.println("Rate of Interest:" + " " + interestRate*100 + ANSI_RED + "%" + ANSI_RESET);
     System.out.println("Loan Term in Years:" + " " + loanTerm);
-    System.out.println("Minimum Monthly Payment:" + " $" + monthlyPayment);
-    System.out.println("Final Monthly Payment:" + " $" + finalPay);
-    System.out.println("Interest to be Paid:" + " $" + interestPaid);
-    System.out.println("Total Cost of Loan:" + " $" + loanCost);
+    System.out.println("Minimum Monthly Payment:" + ANSI_GREEN + " $" + ANSI_RESET + monthlyPayment);
+    System.out.println("Final Monthly Payment:" + ANSI_GREEN + " $" + ANSI_RESET + finalPay);
+    System.out.println("Interest to be Paid:" + ANSI_GREEN + " $" + ANSI_RESET + interestPaid);
+    System.out.println("Total Cost of Loan:" + ANSI_GREEN + " $" + ANSI_RESET + loanCost);
 
 
     }
