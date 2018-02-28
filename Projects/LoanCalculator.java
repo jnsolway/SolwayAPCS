@@ -29,7 +29,7 @@ public class LoanCalculator{
             }
             //If it reaches here, the input was invalid. Loop again.
         }
-        System.out.println("You selected mode " + mode);
+        System.out.println(ANSI_CYAN + "You selected mode " + ANSI_RESET + mode);
 
         if(mode == 1) {
             flatInterest();
@@ -59,7 +59,7 @@ public class LoanCalculator{
         }
         // interestRate = scan.hasNextDouble();
         while(interestRate <= 0) {
-            System.out.print("Interest Rate(%): ");
+            System.out.print("Interest Rate(" + ANSI_RED + "%" + ANSI_RESET + "): " );
             scan2 = new Scanner(System.in);
                 if(scan2.hasNextDouble()) { //Check if input provided is a valid integer
                     interestRate = scan2.nextDouble();
@@ -96,16 +96,14 @@ public class LoanCalculator{
             scan1 = new Scanner(System.in);
                 if(scan1.hasNextDouble()) { //Check if input provided is a valid integer
                     loanAmt = scan1.nextDouble();
-                    break;
                 }
         }
         // interestRate = scan.hasNextDouble();
         while(interestRate <= 0) {
-            System.out.print("Interest Rate(%): ");
+            System.out.print("Interest Rate(" + ANSI_RED + "%" + ANSI_RESET + "): " );
             scan2 = new Scanner(System.in);
                 if(scan2.hasNextDouble()) { //Check if input provided is a valid integer
                     interestRate = scan2.nextDouble();
-                    break;
                 }
         }
         
@@ -115,7 +113,6 @@ public class LoanCalculator{
             scan3 = new Scanner(System.in);
                 if(scan3.hasNextInt()) { //Check if input provided is a valid integer
                     loanTerm = scan3.nextInt();
-                    break;
                 }
         }
         
@@ -124,8 +121,8 @@ public class LoanCalculator{
 
     System.out.println(" ");
     System.out.println("Original Loan Amount:" + ANSI_GREEN + " $" + ANSI_RESET + loanAmt);
-    System.out.println("Rate of Interest:" + interestRate + ANSI_RED + "%" + ANSI_RESET);
-    System.out.println("Loan Term in Years:" + ANSI_GREEN + " $" + ANSI_RESET + loanTerm);
+    System.out.println("Rate of Interest: " + interestRate + ANSI_RED + "%" + ANSI_RESET);
+    System.out.println("Loan Term in Years: " + loanTerm);
     System.out.println("Interest to be Paid:" + ANSI_GREEN + " $" + ANSI_RESET + interest);
     System.out.println("Total Cost of Loan:" + ANSI_GREEN + " $" + ANSI_RESET + loanCost);
         
@@ -143,13 +140,11 @@ public class LoanCalculator{
             scan1 = new Scanner(System.in);
                 if(scan1.hasNextDouble()) { //Check if input provided is a valid integer
                     loanAmt = scan1.nextDouble();
-                    
-                    break;
                 }
         }
         // interestRate = scan.hasNextDouble();
         while(interestRate <= 0) {
-            System.out.print("Interest Rate: ");
+            System.out.print("Interest Rate(" + ANSI_RED + "%" + ANSI_RESET + "): " );
             scan2 = new Scanner(System.in);
                 if(scan2.hasNextDouble()) { //Check if input provided is a valid integer
                     interestRate = scan2.nextDouble();
@@ -158,12 +153,11 @@ public class LoanCalculator{
         }
         
         // loanTerm = scan.hasNextInt();
-        while(loanTerm < 0) {
+        while(loanTerm <= 0) {
             System.out.print("Loan Term: ");
             scan3 = new Scanner(System.in);
                 if(scan3.hasNextInt()) { //Check if input provided is a valid integer
                     loanTerm = scan3.nextInt();
-                    break;
                 }
         }
         
@@ -172,33 +166,29 @@ public class LoanCalculator{
         double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * - 12))));
         double outstandingBalance = loanAmt;
         
-  while(outstandingBalance > 0) {
+  while(outstandingBalance >= 0) {
         interest = outstandingBalance * (interestRate / 12);
         interestPaid = interestPaid + interest;
         outstandingBalance = outstandingBalance + interest - monthlyPayment;
-        
-        if(outstandingBalance == 0){
-            break;
         }
-    }
+    
         double finalPay = monthlyPayment + outstandingBalance;
         double loanCost = loanAmt + interestPaid;
     
     System.out.println(" ");
     System.out.println("Original Loan Amount:" + ANSI_GREEN + " $" + ANSI_RESET + loanAmt);
-    System.out.println("Rate of Interest:" + " " + interestRate*100 + ANSI_RED + "%" + ANSI_RESET);
+    System.out.println("Rate of Interest:" + " " + (interestRate*100) + ANSI_RED + "%" + ANSI_RESET);
     System.out.println("Loan Term in Years:" + " " + loanTerm);
     System.out.println("Minimum Monthly Payment:" + ANSI_GREEN + " $" + ANSI_RESET + monthlyPayment);
     System.out.println("Final Monthly Payment:" + ANSI_GREEN + " $" + ANSI_RESET + finalPay);
     System.out.println("Interest to be Paid:" + ANSI_GREEN + " $" + ANSI_RESET + interestPaid);
     System.out.println("Total Cost of Loan:" + ANSI_GREEN + " $" + ANSI_RESET + loanCost);
 
-
     }
 
     public static void printModeStatement() {
         System.out.print(
-            "Select an interest calculation mode:\n"
+            ANSI_CYAN + "Select an interest calculation mode:\n" + ANSI_RESET
             + "(1) Flat Interest\n"
             + "(2) Compounding Interest Without Monthly Payments\n"
             + "(3) Compounding Interest With Monthly Payments\n"
