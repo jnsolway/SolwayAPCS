@@ -30,7 +30,6 @@ class Plinko {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) {
                     System.out.println("Mode not yet implemented");
-                    runEvenRow(4);
                 }
                 else if(mode == MULTI_DISC) {
                     System.out.println("Mode not yet implemented");
@@ -48,7 +47,20 @@ class Plinko {
     public static int runOddRow(int position) {
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
-
+        System.out.print("|");
+        for(int i = 0; i <= 16; i++) {
+            if(position == i) {
+                System.out.print("O");
+            }
+            else if(isEven(i)) {
+                System.out.print(".");
+            }
+            else {
+                System.out.print(" ");
+            }
+        }
+        System.out.print("|");
+        System.out.print("\n");
         return position;
     }
 
@@ -56,19 +68,19 @@ class Plinko {
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
         System.out.print("|");
-                    for(int i = 0; i <= 16; i++) {
-                        if(position == i) {
-                            System.out.print("O");
-                        }
-                        else if(isEven(i)) {
-                            System.out.print(" ");
-                        }
-                        else {
-                            System.out.print(".");
-                        }
-                    }
-                    System.out.print("|");
-                    System.out.print("\n");
+        for(int i = 0; i <= 16; i++) {
+            if(position == i) {
+                System.out.print("O");
+            }
+            else if(isEven(i)) {
+                System.out.print(" ");
+            }
+            else {
+                System.out.print(".");
+            }
+        }
+        System.out.print("|");
+        System.out.print("\n");
         return position;
     }
 
