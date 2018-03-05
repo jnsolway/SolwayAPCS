@@ -17,6 +17,7 @@ class Plinko {
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
 
     public static int mode = -1;
+    public static int position = -1;
     
 
     public static void main(String[] args) {
@@ -30,6 +31,21 @@ class Plinko {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) {
                     System.out.println("Mode not yet implemented");
+                scan1 = new Scanner(System.in);
+                while(position <= 0 && position >= 16) {
+                    System.out.print("Enter a Postition(0-8): ");
+                    
+                    if(scan1.hasNextInt()) { //Check if input provided is a valid integer
+                        position = scan1.nextInt();
+                    }
+                }
+
+
+
+
+
+
+
                 }
                 else if(mode == MULTI_DISC) {
                     System.out.println("Mode not yet implemented");
