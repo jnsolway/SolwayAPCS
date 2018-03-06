@@ -18,10 +18,11 @@ class Plinko {
 
     public static int mode = -1;
     public static int position = -1;
-    
+    public static Scanner scan;
+    public static Scanner scan1;
 
     public static void main(String[] args) {
-        Scanner scan;
+        
         while(true) {
             //Loop to select mode.
             //This loop is infinite until the user selects the "Quit" option (3)
@@ -31,12 +32,22 @@ class Plinko {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) {
                     System.out.println("Mode not yet implemented");
-                scan1 = new Scanner(System.in);
-                while(position <= 0 && position >= 16) {
-                    System.out.print("Enter a Postition(0-8): ");
-                    
-                    if(scan1.hasNextInt()) { //Check if input provided is a valid integer
-                        position = scan1.nextInt();
+                positionInput();
+                runEvenRow(position);
+                for(int i = 1, i < 12. i++){
+                    if(position == 0){
+                        position++;
+                    } else if(position == 16){
+                        position--;
+                    }else if(Math.rand() < .5){
+                        position++;
+                    }else{
+                        position--;
+                    }
+                    if(isEven(i)){
+                        runEvenRow(position);
+                    }else{
+                        runOddRow(position);
                     }
                 }
 
@@ -44,9 +55,8 @@ class Plinko {
 
 
 
-
-
                 }
+
                 else if(mode == MULTI_DISC) {
                     System.out.println("Mode not yet implemented");
                 }
@@ -59,7 +69,16 @@ class Plinko {
             }
         }
     }
-
+    public static void positionInput(){
+        scan1 = new Scanner(System.in);
+        while(position <= 0 || position >= 16) {
+            System.out.print("Enter a Postition(0-8): ");
+            
+            if(scan1.hasNextInt()) { //Check if input provided is a valid integer
+                position = scan1.nextInt() * 2;
+            }
+        }
+    }
     public static int runOddRow(int position) {
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
