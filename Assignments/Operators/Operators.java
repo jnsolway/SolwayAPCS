@@ -1,7 +1,5 @@
 class Operators {
     public static void main(String args[]) {
-
-        System.out.println((char)27 + "[31m" + "Wow");
     //Name Code
         // String name = "Merrell";
         // System.out.println(name);
@@ -97,16 +95,19 @@ class Operators {
         // System.out.println("MonthsTillGoal" + " " + month);
 
     //Random Sentence code
-        // String[] Nouns = {"dog" , "cat" , "fish" , "tree" , "book" , "bug"};
-        // String Verbs = "ran ate jumped slept hit";
-        // String Articles = "the a";
-        // String Prepositions = "on trough over under in with ";
+        String[] nouns = {"dog" , "cat" , "fish" , "tree" , "book" , "bug"};
+        String[] verbs = {"ran" , "ate" , "jumped" , "slept" , "hit"};
+        String[] articles = {"the" , "a"};
+        String[] prepositions = {"on" , "trough" , "over" , "under" , "in" , "with "};
+
+
+    System.out.print( articles[(int)(Math.random() * ((1 - 0) + 1))] + " " );
+    System.out.print( nouns[(int)(Math.random() * ((5 - 0) + 1))] + " " );
+    System.out.print( verbs[(int)(Math.random() * ((4 - 0) + 1))] + " " );
+    System.out.print( prepositions[(int)(Math.random() * ((5 - 0) + 1))] + " " );
+    System.out.print( articles[(int)(Math.random() * ((1 - 0) + 1))] + " " );
+    System.out.print( nouns[(int)(Math.random() * ((5 - 0) + 1))] + " " );
         
-        // Random sen = new Random();
-
-        // String Nouns_sen = Nouns[sen.nextInt(Nouns.length)];
-
-        // System.out.println(Nouns_sen);
 
     //interest
         // double loanAmount = 225.50;

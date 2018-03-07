@@ -45,12 +45,14 @@ class Plinko {
                             position--;
                         }
                         if(isEven(i)){
+                            //waitmil(500);
                             runEvenRow(position);
                         }else{
+                            //waitmil(500);
                             runOddRow(position);
                         }
                     }
-
+                System.out.println("You got " + VALUES[position/2] + " points");
 
 
 
@@ -122,6 +124,16 @@ class Plinko {
 
     public static Boolean isEven(int x) {
         return x % 2 == 0;
+    }
+
+    public static void waitmil(int y) {
+        try {
+            //sleep 5 seconds
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+     
     }
 
     public static void printModeStatement() {
