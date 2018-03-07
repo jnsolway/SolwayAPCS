@@ -20,6 +20,7 @@ class Plinko {
     public static int position = -1;
     public static Scanner scan;
     public static Scanner scan1;
+    public static int userInputPosition = -1;
 
     public static void main(String[] args) {
         
@@ -31,25 +32,24 @@ class Plinko {
             if(scan.hasNextInt()) {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) {
-                    System.out.println("Mode not yet implemented");
-                positionInput();
-                runEvenRow(position);
-                for(int i = 1, i < 12. i++){
-                    if(position == 0){
-                        position++;
-                    } else if(position == 16){
-                        position--;
-                    }else if(Math.rand() < .5){
-                        position++;
-                    }else{
-                        position--;
+                    positionInput();
+                    runEvenRow(position);
+                    for(int i = 1; i < 12; i++){
+                        if(position == 0){
+                            position++;
+                        } else if(position == 16){
+                            position--;
+                        }else if(Math.random() < .5){
+                            position++;
+                        }else{
+                            position--;
+                        }
+                        if(isEven(i)){
+                            runEvenRow(position);
+                        }else{
+                            runOddRow(position);
+                        }
                     }
-                    if(isEven(i)){
-                        runEvenRow(position);
-                    }else{
-                        runOddRow(position);
-                    }
-                }
 
 
 
@@ -70,22 +70,23 @@ class Plinko {
         }
     }
     public static void positionInput(){
-        scan1 = new Scanner(System.in);
-        while(position <= 0 || position >= 16) {
+        while(userInputPosition < 0 || userInputPosition > 8) {
             System.out.print("Enter a Postition(0-8): ");
-            
+            scan1 = new Scanner(System.in);
             if(scan1.hasNextInt()) { //Check if input provided is a valid integer
-                position = scan1.nextInt() * 2;
+                userInputPosition = scan1.nextInt();
             }
         }
+        position = userInputPosition*2;
+        userInputPosition = -1;
     }
     public static int runOddRow(int position) {
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
-        System.out.print("|");
+        System.out.print(ANSI_GREEN + "|" + ANSI_RESET);
         for(int i = 0; i <= 16; i++) {
             if(position == i) {
-                System.out.print("O");
+                System.out.print(ANSI_RED + "O" + ANSI_RESET);
             }
             else if(isEven(i)) {
                 System.out.print(".");
@@ -94,7 +95,7 @@ class Plinko {
                 System.out.print(" ");
             }
         }
-        System.out.print("|");
+        System.out.print(ANSI_GREEN + "|" + ANSI_RESET);
         System.out.print("\n");
         return position;
     }
@@ -102,10 +103,10 @@ class Plinko {
     public static int runEvenRow(int position) {
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
-        System.out.print("|");
+        System.out.print(ANSI_GREEN + "|" + ANSI_RESET);
         for(int i = 0; i <= 16; i++) {
             if(position == i) {
-                System.out.print("O");
+                System.out.print(ANSI_RED + "O" + ANSI_RESET);
             }
             else if(isEven(i)) {
                 System.out.print(" ");
@@ -114,7 +115,7 @@ class Plinko {
                 System.out.print(".");
             }
         }
-        System.out.print("|");
+        System.out.print(ANSI_GREEN + "|" + ANSI_RESET);
         System.out.print("\n");
         return position;
     }
