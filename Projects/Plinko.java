@@ -34,7 +34,7 @@ class Plinko {
                 if(mode == SINGLE_DISC) {
                     positionInput();
                     runEvenRow(position);
-                    for(int i = 1; i < 12; i++){
+                    for(int i = 1; i < 13; i++){
                         if(position == 0){
                             position++;
                         } else if(position == 16){
@@ -88,6 +88,7 @@ class Plinko {
         System.out.print(ANSI_GREEN + "|" + ANSI_RESET);
         for(int i = 0; i <= 16; i++) {
             if(position == i) {
+                waitmil(250);
                 System.out.print(ANSI_RED + "O" + ANSI_RESET);
             }
             else if(isEven(i)) {
@@ -108,6 +109,7 @@ class Plinko {
         System.out.print(ANSI_GREEN + "|" + ANSI_RESET);
         for(int i = 0; i <= 16; i++) {
             if(position == i) {
+                waitmil(250);
                 System.out.print(ANSI_RED + "O" + ANSI_RESET);
             }
             else if(isEven(i)) {
@@ -129,7 +131,7 @@ class Plinko {
     public static void waitmil(int y) {
         try {
             //sleep 5 seconds
-            Thread.sleep(1000);
+            Thread.sleep(y);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
