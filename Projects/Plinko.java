@@ -72,13 +72,15 @@ class Plinko {
                                 position++;
                             }else{
                                 position--;
-                            }
-                            POSITION[position/2]++;
+                            }     
                         }
+                        POSITION[position/2]++;
                     }
+
                     for(int i = 0; i < POSITION.length; i++) {
                     System.out.println("Landed In Position " + i + ": " + POSITION[i]);
                     }
+                    POSITION = new int[9];
                 }
                 else if(mode == TERMINATE) {
                     System.out.println(ANSI_RED + "Goodbye" + ANSI_RESET);
