@@ -15,12 +15,16 @@ class Plinko {
     public static final String ANSI_WHITE = "\u001B[37m";
 
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
+    public static int[] POSITION = new int[9];
 
     public static int mode = -1;
     public static int position = -1;
+    public static int discAmount = -1;
     public static Scanner scan;
     public static Scanner scan1;
+    public static Scanner scan2;
     public static int userInputPosition = -1;
+    public static int userdiscAmount = -1;
 
     public static void main(String[] args) {
         
@@ -56,7 +60,25 @@ class Plinko {
                 }   
 
                 else if(mode == MULTI_DISC) {
-                    System.out.println("Mode not yet implemented");
+                    amountInput();
+                    positionInput();
+                    for(int i = 0; i < discAmount; i++) {
+                        for(int j = 1; j < 13; j++){
+                            if(position == 0){
+                                position++;
+                            } else if(position == 16){
+                                position--;
+                            }else if(Math.random() < .5){
+                                position++;
+                            }else{
+                                position--;
+                            }
+                            POSITION[position/2]++;
+                        }
+                    }
+                    for(int i = 0; i < POSITION.length; i++) {
+                    System.out.println("Landed In Position " + i + ": " + POSITION[i]);
+                    }
                 }
                 else if(mode == TERMINATE) {
                     System.out.println(ANSI_RED + "Goodbye" + ANSI_RESET);
@@ -75,8 +97,20 @@ class Plinko {
                 userInputPosition = scan1.nextInt();
             }
         }
-        position = usernputPosition*2;
+        position = userInputPosition * 2;
         userInputPosition = -1;
+    }
+
+    public static void amountInput(){
+        while(userdiscAmount <= 0) {
+            System.out.print("Enter Disk Amount: ");
+            scan2 = new Scanner(System.in);
+            if(scan2.hasNextInt()) { //Check if input provided is a valid integer
+                userdiscAmount = scan2.nextInt();
+            }
+        }
+        discAmount = userdiscAmount;
+        userdiscAmount = -1;
     }
     public static int runOddRow(int position) {
         //Modify the position.
