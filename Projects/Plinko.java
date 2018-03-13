@@ -3,7 +3,8 @@ import java.util.Scanner;
 class Plinko {
     public static final int SINGLE_DISC = 1;
     public static final int MULTI_DISC = 2;
-    public static final int TERMINATE = 3;
+    public static final int QUANTUM = 3;
+    public static final int TERMINATE = 4;
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -90,11 +91,37 @@ class Plinko {
                     points = 0;
                     POSITION = new int[9];
                 }
+                if(mode == QUANTUM) {
+                    userInputPosition = -1;     
+                    positionInput();
+                    runEvenRow(position);
+                    for(int i = 1; i < 13; i++){
+                         if(Math.random() < .5){
+                            position++; 
+                        } else {
+                            position--;
+                        }
+                        if(position == 17) {
+                            position = 0;
+                        } 
+                        if(position == -1) {
+                            position = 16;
+                        }
+                        if(isEven(i)){
+                            //waitmil(500);
+                            runEvenRow(position);
+                        }else{
+                            //waitmil(500);
+                            runOddRow(position);
+                        }
+                    }
+                    System.out.println("You got " + VALUES[position/2] + " points");
+                }
                 else if(mode == TERMINATE) {
                     System.out.println(ANSI_RED + "Goodbye" + ANSI_RESET);
                     break;
                 } else {
-                       continue;
+                    continue;
                 }
             }
         }
@@ -182,7 +209,8 @@ class Plinko {
             ANSI_CYAN + "Select a mode:\n" + ANSI_RESET
             + "\t(1) Single disc\n"
             + "\t(2) Multiple discs\n"
-            + "\t(3) Quit\n"
+            + "\t(3) QUANTUM disc\n"
+            + "\t(4) Quit\n"
         );
     }
 }
