@@ -18,6 +18,7 @@ class Plinko {
     public static int[] POSITION = new int[9];
 
     public static int mode = -1;
+    public static int points = 0;
     public static int position = -1;
     public static int discAmount = -1;
     public static Scanner scan;
@@ -36,6 +37,7 @@ class Plinko {
             if(scan.hasNextInt()) {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) {
+                    userInputPosition = -1;
                     positionInput();
                     runEvenRow(position);
                     for(int i = 1; i < 13; i++){
@@ -60,6 +62,7 @@ class Plinko {
                 }   
 
                 else if(mode == MULTI_DISC) {
+                    userInputPosition = -1;
                     amountInput();
                     positionInput();
                     for(int i = 0; i < discAmount; i++) {
@@ -74,19 +77,24 @@ class Plinko {
                                 position--;
                             }     
                         }
+                        // System.out.println(position)
+                        points += VALUES[position/2];
                         POSITION[position/2]++;
+                        position = userInputPosition*2;
                     }
 
                     for(int i = 0; i < POSITION.length; i++) {
                     System.out.println("Landed In Position " + i + ": " + POSITION[i]);
                     }
+                    System.out.println("You got " + ANSI_GREEN + points + ANSI_RESET + " Points");
+                    points = 0;
                     POSITION = new int[9];
                 }
                 else if(mode == TERMINATE) {
                     System.out.println(ANSI_RED + "Goodbye" + ANSI_RESET);
                     break;
                 } else {
-                    continue;
+                       continue;
                 }
             }
         }
@@ -100,7 +108,6 @@ class Plinko {
             }
         }
         position = userInputPosition * 2;
-        userInputPosition = -1;
     }
 
     public static void amountInput(){
