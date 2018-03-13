@@ -102,10 +102,10 @@ class Plinko {
                             position--;
                         }
                         if(position == 17) {
-                            position = 0;
+                            position = 1;
                         } 
                         if(position == -1) {
-                            position = 16;
+                            position = 15;
                         }
                         if(isEven(i)){
                             //waitmil(500);
