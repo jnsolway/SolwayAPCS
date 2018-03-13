@@ -52,12 +52,8 @@ class Plinko {
                             runOddRow(position);
                         }
                     }
-                System.out.println("You got " + VALUES[position/2] + " points");
-
-
-
-
-                }
+                    System.out.println("You got " + VALUES[position/2] + " points");
+                }   
 
                 else if(mode == MULTI_DISC) {
                     System.out.println("Mode not yet implemented");
@@ -79,7 +75,7 @@ class Plinko {
                 userInputPosition = scan1.nextInt();
             }
         }
-        position = userInputPosition*2;
+        position = usernputPosition*2;
         userInputPosition = -1;
     }
     public static int runOddRow(int position) {
