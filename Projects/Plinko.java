@@ -126,23 +126,21 @@ class Plinko {
                     runEvenRow(position);
                     Boolean fell = false;
                     for(int i = 1; i < 13; i++) {
-                         if(Math.random() < .5) {
+                        if(position == 17) {
+                            // System.out.println("You fell off the right side!");
+                            fell = true;
+                            // break;
+                        } else if(position == -1) {
+                            // System.out.println("You fell off the left side!");
+                            fell = true;
+                            // break;
+                        } else if(Math.random() < .5) {
                             position++; 
                         } else {
                             position--;
                         }
                         
-                        if(position == 17) {
-                            System.out.println("You fell off the right side!");
-                            fell = true;
-                            break;
-                        } 
-
-                        if(position == -1) {
-                            System.out.println("You fell off the left side!");
-                            fell = true;
-                            break;
-                        }
+                        
 
                         if(isEven(i)){
                             //waitmil(500);
@@ -155,7 +153,8 @@ class Plinko {
                     if(fell == false) {
                         System.out.println("You got " + VALUES[position/2] + " points");
                     } else {
-                        System.out.println("You got " + -1 + " points");
+                        System.out.println("You fell off the side!");
+                        System.out.println("You got " + "no" + " points");
                     }
 
 
