@@ -24,16 +24,33 @@ class Lists {
         // numList.add(3, 35); // [30,10,25,5,35,20]
         // numList.remove(2); // [30,10,5,35,20]
 
-        ArrayList<String> todoList = new ArrayList<String>(); 
+        ArrayList<String> todoList = new ArrayList<String>();
+        
         while(true) {
             Scanner scan = new Scanner(System.in);
             System.out.print("Enter an item in the To-do List: ");
-            String s = scan.nextLine();
+            scan = new Scanner(System.in);
+            int x = -1;
+            String s;
+            if(scan.hasNextInt() ) { 
+                x = scan.nextInt();
+            } else {
+                s = scan.nextLine();
+            }
+            
+            System.out.println("Num: " + x);
+            System.out.println("Size: " + todoList.size());
             todoList.add(s);
             // System.out.println(todoList.get(0));
             System.out.println(ANSI_RED + "To-do" + ANSI_RESET);
-            for(int i = 0; i < todoList.size(); i++) {
-                System.out.println("[" + i + "] " + todoList.get(i));
+            for(int i = 0; i < todoList.size(); i++) { 
+                if(x >= 0 && x < todoList.size()) {
+                    // System.out.println(x);
+                    todoList.remove(x);
+                    x = -1;
+            } else {
+                // System.out.println(todoList.size());
+                System.out.println(ANSI_CYAN + "[" + i + "] " + ANSI_RESET + todoList.get(i)); 
             }
         }
 
