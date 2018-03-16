@@ -13,7 +13,6 @@ class Lists {
     
     public static void main(String[] args) {
         // ArrayList<Integer> numList = new ArrayList<Integer>();
-
         // numList.add(5); // [5]
         // numList.add(0,10); // [10,5]
         // numList.add(1,15); // [10,15,5]
@@ -23,9 +22,7 @@ class Lists {
         // numList.add(0, 30); // [30,10,25,5,20]
         // numList.add(3, 35); // [30,10,25,5,35,20]
         // numList.remove(2); // [30,10,5,35,20]
-
         ArrayList<String> todoList = new ArrayList<String>();
-        
         while(true) {
             Scanner scan = new Scanner(System.in);
             System.out.print(ANSI_GREEN + "Enter an item in the To-do List: " + ANSI_RESET);
@@ -39,22 +36,17 @@ class Lists {
                 todoList.add(s);
             }
             if(x >= 0 && x < todoList.size()) {
-                // System.out.println(x);
                 todoList.remove(x);
                 x = -1;
             }
-            // System.out.println("Num: " + x);
-            // System.out.println("Size: " + todoList.size());
-            
-            // System.out.println(todoList.get(0));
             System.out.println(ANSI_RED + "To-do" + ANSI_RESET);
             for(int i = 0; i < todoList.size(); i++) { 
-                
-                // System.out.println(todoList.size());
                 System.out.println(ANSI_CYAN + "[" + i + "] " + ANSI_RESET + todoList.get(i)); 
             }
-        
+            if(todoList.size()==0){
+                System.out.println(ANSI_CYAN + "[X]" + ANSI_RED + " NONE" + ANSI_RESET);
 
+            }
         }   
     }
 }
