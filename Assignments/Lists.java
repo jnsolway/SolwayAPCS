@@ -28,7 +28,7 @@ class Lists {
         
         while(true) {
             Scanner scan = new Scanner(System.in);
-            System.out.print("Enter an item in the To-do List: ");
+            System.out.print(ANSI_GREEN + "Enter an item in the To-do List: " + ANSI_RESET);
             scan = new Scanner(System.in);
             int x = -1;
             String s;
@@ -36,23 +36,25 @@ class Lists {
                 x = scan.nextInt();
             } else {
                 s = scan.nextLine();
+                todoList.add(s);
             }
+            if(x >= 0 && x < todoList.size()) {
+                // System.out.println(x);
+                todoList.remove(x);
+                x = -1;
+            }
+            // System.out.println("Num: " + x);
+            // System.out.println("Size: " + todoList.size());
             
-            System.out.println("Num: " + x);
-            System.out.println("Size: " + todoList.size());
-            todoList.add(s);
             // System.out.println(todoList.get(0));
             System.out.println(ANSI_RED + "To-do" + ANSI_RESET);
             for(int i = 0; i < todoList.size(); i++) { 
-                if(x >= 0 && x < todoList.size()) {
-                    // System.out.println(x);
-                    todoList.remove(x);
-                    x = -1;
-            } else {
+                
                 // System.out.println(todoList.size());
                 System.out.println(ANSI_CYAN + "[" + i + "] " + ANSI_RESET + todoList.get(i)); 
             }
-        }
+        
 
-    }   
+        }   
+    }
 }
