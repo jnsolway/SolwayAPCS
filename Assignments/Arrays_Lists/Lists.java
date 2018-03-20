@@ -1,5 +1,6 @@
 import java.util.*;
-    
+
+ 
 class Lists {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
@@ -25,6 +26,7 @@ class Lists {
         ArrayList<String> todoList = new ArrayList<String>();
         while(true) {
             Scanner scan = new Scanner(System.in);
+           
             System.out.print(ANSI_GREEN + "Enter an item in the To-do List: " + ANSI_RESET);
             scan = new Scanner(System.in);
             int x = -1;
@@ -39,13 +41,13 @@ class Lists {
                 todoList.remove(x);
                 x = -1;
             }
+            //  System.out.print(String.format("\033[2J"));
             System.out.println(ANSI_RED + "To-do" + ANSI_RESET);
             for(int i = 0; i < todoList.size(); i++) { 
                 System.out.println(ANSI_CYAN + "[" + i + "] " + ANSI_RESET + todoList.get(i)); 
             }
             if(todoList.size()==0){
                 System.out.println(ANSI_CYAN + "[X]" + ANSI_RED + " NONE" + ANSI_RESET);
-
             }
         }   
     }
