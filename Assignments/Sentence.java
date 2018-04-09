@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Sentence {
-    public static String Sentence = "Now what will I do?";
+    public static String Sentence = "do?";
 
     public static void main(String[] args) {
         ArrayList<Character> sentenceList = new ArrayList<Character>();
