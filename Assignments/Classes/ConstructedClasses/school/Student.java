@@ -13,11 +13,15 @@ public class Student {
         this.id = id;
     }
 
-    // public String getFullName() {
-    //     return firstName + " " + lastName;
-    // }
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 
-    // public String toString() {
-    //     return "Name: " + getFullName() + " | ID: " + id;
-    // }
+    public String toString() {
+        return "Name: " + getFullName() + " | ID: " + id;
+    }
+}
+
+public class Course {
+    
 }
