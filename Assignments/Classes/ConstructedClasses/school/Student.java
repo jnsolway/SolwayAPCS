@@ -6,6 +6,7 @@ public class Student {
     public String firstName;
     public String lastName;
     public int id;
+    List<Course> courses = new ArrayList<Course>();
 
     public Student(String firstName, String lastName, int id) {
         this.firstName = firstName;
@@ -20,8 +21,4 @@ public class Student {
     public String toString() {
         return "Name: " + getFullName() + " | ID: " + id;
     }
-}
-
-public class Course {
-    
 }
